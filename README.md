@@ -47,7 +47,47 @@
         <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
         <tableau-viz id="tableauViz" src="https://public.tableau.com/views/WorldEnergyConsumptionDashboard/EnergyDashboard" width="100%" height="800px" toolbar="bottom"></tableau-viz>
     </div>
+body {
+    background-image: url('https://depositphotos-blog.s3.eu-west-1.amazonaws.com/uploads/2017/07/Soothing-nature-backgrounds-2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
 
+.header {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 10px;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    font-family: 'Georgia', serif;
+    color: #006400;
+}
+
+a {
+    color: #00008b;
+}
     <div class="footer">
         <p>Scratch page created from blank HTML. Professional pages are separate.</p>
     </div>
