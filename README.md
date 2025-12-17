@@ -87,7 +87,90 @@ h1, h2 {
 
 a {
     color: #00008b;
-}
+}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dad Joke Generator (AI-Assisted App)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #skyblue, #white);
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+        }
+        #joke {
+            font-size: 24px;
+            margin: 30px;
+            min-height: 100px;
+            color: #444;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff4757;
+            transform: scale(1.05);
+        }
+        a {
+            display: block;
+            margin-top: 40px;
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dad Joke Generator</h1>
+        <p>Click for a groan-worthy dad joke! (Built with AI collaboration)</p>
+        <div id="joke">Click the button to get started!</div>
+        <button id="newJoke">New Joke 😂</button>
+        <a href="scratch.html">Back to Scratch Page</a>
+    </div>
+
+    <script>
+        const jokeElement = document.getElementById('joke');
+        const button = document.getElementById('newJoke');
+
+        async function fetchJoke() {
+            jokeElement.textContent = 'Loading...';
+            try {
+                const response = await fetch('https://icanhazdadjoke.com/', {
+                    headers: { 'Accept': 'application/json' }
+                });
+                const data = await response.json();
+                jokeElement.textContent = data.joke;
+            } catch (error) {
+                jokeElement.textContent = 'Oops! No joke right now. Try again!';
+            }
+        }
+
+        button.addEventListener('click', fetchJoke);
+        // Load one on start
+        fetchJoke();
+    </script>
+</body>
+</html>
     <div class="footer">
         <p>Scratch page created from blank HTML. Professional pages are separate.</p>
     </div>
